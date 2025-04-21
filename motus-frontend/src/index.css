@@ -1,0 +1,149 @@
+html, body {
+  height: 100%; /* Assure que le body et html prennent toute la hauteur */
+  margin: 0;    /* Enlève la marge par défaut */
+  padding: 0;   /* Enlève le padding par défaut */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #00C3EB;
+  background: linear-gradient(180deg,rgba(40,102,220,255) 0%, rgba(12, 93, 125, 1) 100%);
+  background-size: cover; /* Fait en sorte que l'arrière-plan couvre toute la page */
+  height: 100%; /* S'assure que le body prend toute la hauteur de la fenêtre */
+  color: white; /* Pour le texte, si tu souhaites une couleur claire sur le fond */
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Prend toute la hauteur de l'écran */
+  text-align: center;
+  padding: 20px;
+}
+
+.motus-game {
+  max-width: 90%;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;  /* Aligne l'image et le bouton verticalement */
+  align-items: center;     /* Centre l'image et le bouton horizontalement */
+  margin-bottom: 20px;     /* Ajoute un peu d'espace sous le header */
+}
+
+.logo {
+  width: clamp(150px, 30vw, 350px);
+  margin-bottom: 20px;
+}
+
+.difficulty-select button {
+  margin: 10px;
+  padding: 8px 16px;
+}
+
+.attempt {
+  margin: 10px 0;
+  letter-spacing: 10px;
+}
+
+.letter {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin: 2px;
+  border: 1px solid #ccc;
+}
+
+.letter.correct {
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+}
+
+.letter.misplaced {
+  position: relative;
+  background-color: blue;  /* comme .absent */
+  color: white;
+  border-radius: 5px;
+  z-index: 1;      /* carré arrondi */
+}
+
+.letter.misplaced::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background-color: orange;
+  border-radius: 50%;     /* cercle parfait */
+  z-index: -1;
+}
+
+.letter.absent {
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+}
+
+.letter.blue-hint {
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+}
+
+.guess-input {
+  margin: 20px 0;
+}
+
+.guess-input input {
+  padding: 5px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.message {
+  margin-top: 20px;
+  font-weight: bold;
+  min-height: 24px;
+}
+
+.scores-table {
+  margin-top: 20px;
+}
+
+.scores-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.scores-table th, .scores-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.scores-table th {
+  background-color: grey;
+}
+
+#show-scores {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: white;
+  color: #0C5D7D;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
